@@ -6,7 +6,7 @@ import pandas as pd
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {'executable_path': 'chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    return Browser('chrome', **executable_path, headless=False)
 
 
 def mars():
@@ -47,9 +47,9 @@ def mars():
     mars_weather = soup3.find('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text').text.rstrip()
 
     #"https://space-facts.com/mars/"
-    response4 = requests.get(mars_facts_url)
+#     response4 = requests.get(mars_facts_url)
     # Create BeautifulSoup object; parse with 'html.parser'
-    soup4 = BeautifulSoup(response4.text, 'html.parser')
+#     soup4 = BeautifulSoup(response4.text, 'html.parser')
 
     data = pd.read_html(mars_facts_url)
     mars_df = pd.DataFrame(data[0])
@@ -59,19 +59,19 @@ def mars():
     html = browser.html
     browser.visit(usgs_url)
     html = browser.html
-    soup = BeautifulSoup(html, 'html.parser')
-    links = soup.find_all('div', class_='description')
+    soup4 = BeautifulSoup(html, 'html.parser')
+    links = soup4.find_all('div', class_='description')
     
     for link in links:
         
         html = browser.html
-        soup = BeautifulSoup(html, 'html.parser')
+        soup4 = BeautifulSoup(html, 'html.parser')
         browser.visit('https://astrogeology.usgs.gov' +  link.a['href'])
         
         html = browser.html
-        soup = BeautifulSoup(html, 'html.parser')
+        soup4 = BeautifulSoup(html, 'html.parser')
         hemisphere_image_urls.append({'title': link.h3.text, 
-                                    'img_url': soup.find('div', class_='downloads').ul.li.a['href']})
+                                    'img_url': soup4.find('div', class_='downloads').ul.li.a['href']})
     
     browser.quit()
 
