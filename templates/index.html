@@ -22,20 +22,20 @@
     <h3>Here's what the weather is like:</h3>
     <p>{{data.mars_weather}}</p>
     <h3>Also, here are some facts about Mars</h3>
-        {{data.mars_facts}}
+        {{data.mars_facts|safe}}
     
     <h3>And here's what it looks like:</h3>
-    <h4>{{data[0].title}}</h4>
-    <img src="{{ data[0].img_url}}" alt="{{data[0].title}}">
+    <h4>{{data.hemisphere_image_urls[0].title}}</h4>
+    <img src="{{ data.hemisphere_image_urls[0].img_url}}" alt="{{data.hemisphere_image_urls[0].title}}">
 
-    <h4>{{data[1].title}}</h4>
-    <img src="{{ data[1].img_url}}" alt="{{data[1].title}}">
+    <h4>{{data.hemisphere_image_urls[1].title}}</h4>
+    <img src="{{ data.hemisphere_image_urls[1].img_url}}" alt="{{data.hemisphere_image_urls[1].title}}">
 
-    <h4>{{data[2].title}}</h4>
-    <img src="{{ data[2].img_url}}" alt="{{data[2].title}}">
+    <h4>{{data.hemisphere_image_urls[2].title}}</h4>
+    <img src="{{ data.hemisphere_image_urls[2].img_url}}" alt="{{data.hemisphere_image_urls[2].title}}">
 
-    <h4>{{data[3].title}}</h4>
-    <img src="{{ data[3].img_url}}" alt="{{data[3].title}}">
+    <h4>{{data.hemisphere_image_urls[3].title}}</h4>
+    <img src="{{ data.hemisphere_image_urls[3].img_url}}" alt="{{data.hemisphere_image_urls[3].title}}">
   </div>
   </div>
 </body>
