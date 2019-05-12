@@ -9,7 +9,8 @@ app = Flask(__name__)
 # mongo = PyMongo(app)
 
 # Or set inline
-mongo = PyMongo(app, uri="mongodb://localhost:27017/craigslist_app")
+# mongo = PyMongo(app, uri="mongodb://localhost:27017/craigslist_app")
+mongo = PyMongo(app, uri="mongodb://ferozumair786:***Canidium786@ds155596.mlab.com:55596/heroku_6501q5h6")
 
 
 @app.route("/")
