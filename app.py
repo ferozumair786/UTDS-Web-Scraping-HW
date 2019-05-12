@@ -17,7 +17,7 @@ mongo = PyMongo(app, uri="mongodb://ferozumair786:***Canidium786@ds155596.mlab.c
 def index():
     data = mongo.db.collection.find_one()
     if data is None:
-        return render_template("index1.html")
+        return render_template("index.html")
     else: 
         return render_template("index.html", data=data)
 
